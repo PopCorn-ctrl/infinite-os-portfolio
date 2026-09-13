@@ -12,14 +12,14 @@
     z-index: 111;
     border: 2px solid #fff;
     transition: all 0.2s ease-out;
-    animation: moveCursor1 .5s infinite alternate;
+    animation: moveCursor1 .6s infinite alternate;
     mix-blend-mode: difference;
 }
 
 .expand {
     background: transparent;
     animation: moveCursor2 .5s forwards;
-    border: 1px solid rgb(170, 12, 175);
+    border: 1px solid rgb(255, 255, 255);
 }
 
 @keyframes moveCursor1 {
@@ -38,11 +38,10 @@
     }
 
     50% {
-        transform: scale(2.5);
+        transform: scale(1.5);
     }
 
     100% {
         transform: scale(1);
-        opacity: 0;
     }
 }
