@@ -7,23 +7,46 @@
 
     <link rel="stylesheet" href="www/css/styles.css">
     <link rel="stylesheet" href="www/css/cursor.css">
+    <link rel="stylesheet" href="www/css/loading.css">
 </head>
 <body>
-    <div class="clock">
-        <span id="hours">00</span> :
-        <span id="minutes">00</span>
+
+    <div class="loading">
+        <div class="loading-text">
+            <span class="loading-text-words">I</span>
+            <span class="loading-text-words">N</span>
+            <span class="loading-text-words">F</span>
+            <span class="loading-text-words">I</span>
+            <span class="loading-text-words">N</span>
+            <span class="loading-text-words">I</span>
+            <span class="loading-text-words">T</span>
+            <span class="loading-text-words">E</span>
+            <span class="loading-text-words">/</span>
+            <span class="loading-text-words">/</span>
+            <span class="loading-text-words">O</span>
+            <span class="loading-text-words">S</span>
+
+        </div>
     </div>
+
     <div class="cursor"></div>
-    
 
-    <div class="bottombar">
-    </div>
+    <section id="startup">
+        <div id="particles-js"></div>
 
-    <img class="bgbackground" src="www/img/background 2.jpg" alt="Background Background">
+        <div class="clock">
+            <span id="hours">00</span> :
+            <span id="minutes">00</span>
+        </div>
+        
+        
 
-    <img class="bgforeground" src="www/img/background 2 foreground.png" alt="Foreground Background">
+        <div class="loginbutton"></div>
+    </section>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="www/js/clock.js"></script>
     <script src="www/js/cursor.js"></script>
+    <script src="www/js/preload.js"></script>
 </body>
 </html>
