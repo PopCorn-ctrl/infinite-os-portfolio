@@ -1,5 +1,6 @@
 const stopMenu = document.querySelector(".stop-menu");
-const logo = document.querySelector(".logo");
+const logo = document.getElementById("logo");
+
 
 const quit = document.getElementById("close");
 const refresh = document.getElementById("refresh");
