@@ -10,54 +10,141 @@
     <link rel="stylesheet" href="www/css/styles.css">
     <link rel="stylesheet" href="www/css/cursor.css">
     <link rel="stylesheet" href="www/css/loading.css">
+    <link rel="stylesheet" href="www/css/navbar.css">
+    <link rel="stylesheet" href="www/css/right-click.css">
+    <link rel="stylesheet" href="www/css/dock.css">
+    <link rel="stylesheet" href="www/css/close.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
 
     <div class="loading">
         <div class="loading-text">
-            <span class="loading-text-words">I</span>
-            <span class="loading-text-words">N</span>
-            <span class="loading-text-words">F</span>
-            <span class="loading-text-words">I</span>
-            <span class="loading-text-words">N</span>
-            <span class="loading-text-words">I</span>
-            <span class="loading-text-words">T</span>
-            <span class="loading-text-words">E</span>
-            <span class="loading-text-words">/</span>
-            <span class="loading-text-words">/</span>
-            <span class="loading-text-words">O</span>
-            <span class="loading-text-words">S</span>
-
+            <span class="loading-text-words">I</span><span class="loading-text-words">N</span><span class="loading-text-words">F</span><span class="loading-text-words">I</span><span class="loading-text-words">N</span><span class="loading-text-words">I</span><span class="loading-text-words">T</span><span class="loading-text-words">E</span><span class="loading-text-words">/</span><span class="loading-text-words">/</span><span class="loading-text-words">O</span><span class="loading-text-words">S</span>
         </div>
     </div>
 
-    
+    <div class="shutdown-screen" id="shutdownScreen">
+        <div class="loading-text">
+            <div class="line">
+            <span>V</span><span>O</span><span>I</span><span>D</span><span>/</span><span>/</span><span>O</span><span>S</span>
+            </div>
+
+            <div class="line off">
+            <span>O</span><span>F</span><span>F</span><span>L</span><span>I</span><span>N</span><span>E</span>
+            </div>
+        </div>
+    </div>
     
 
     <div class="cursor"></div>
     <div class="custom-menu" id="customMenu">
         <ul>
-            <li><span>Afficher</span><span class="arrow">›</span></li>
-            <li><span>Nouveau</span><span class="arrow">›</span></li>
-            <li><span>Personnalisé</span></li>
-            <li><span>Terminal</span></li>
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Afficher</span>
+                </div>
+                <span class="arrow">›</span>
+            </li>
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-file"></i>
+                    <span>Nouveau</span>
+                </div>
+                <span class="arrow">›</span>
+            </li>
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Personnalisé</span>
+                </div>
+            </li>
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-terminal"></i>
+                    <span>Terminal</span>
+                </div>
+            </li>
 
             <li class="separator"></li>
 
-            <li><span>Paramètres</span><span class="arrow">›</span></li>
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Paramètres</span>
+                </div>
+                <span class="arrow">›</span>
+            </li>
         </ul>
     </div>
 
-    <section id="startup">
+    <section id="startup" class="reveal">
 
         <div class="foreground"></div>
         <div id="particles-js"></div>
 
-        <div id="clock"></div>
+        <div class="nav reveal">
+            <div class="left reveal"><img src="www/img/logo.png" alt="" class="logo"></div>
+            <div class="right reveal">
+                <div class="short-right reveal">
+                    <span class="right-icon"><i class="fa-solid fa-arrow-down"></i></span>
+                </div>
+                <div class="long-right reveal">
+                    <div class="right-icons">
+                        <span class="right-icon"><i class="fa-solid fa-battery-three-quarters"></i></span>
+                        <span class="right-icon"><i class="fa-solid fa-wifi"></i></span>
+                        <span class="right-icon"><i class="fa-brands fa-bluetooth-b"></i></span>
+                        <span class="right-icon"><i class="fa-solid fa-volume-high"></i></span>
+                        <span class="right-icon"><i class="fa-solid fa-moon enable"></i></span>
+                        <span class="right-icon disable"><i class="fa-solid fa-sun disable"></i></span>
 
-        <div class="navbar">
-        
+                    </div>
+                </div>
+            </div>
+            <div id="clock"></div>
         </div>
+
+        <div class="stop-menu">
+            <ul>
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>USER</span>
+                </div>
+                <span class="arrow">›</span>
+            </li>
+            
+            <li class="separator"></li>
+
+            <li>
+                <div class="item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Paramètres</span>
+                </div>
+                <span class="arrow">›</span>
+            </li>
+            
+            <li class="separator"></li>
+
+            <li id="refresh">
+                <div class="item">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>redémarrer</span>
+                </div>
+            </li>
+            <li id="close">
+                <div class="item">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Quitter</span>
+                </div>
+            </li>
+        </ul>
+        </div>
+
+        <div class="dock reveal">    
+         </div>
     </section>
 
 
@@ -65,5 +152,6 @@
     <script src="www/js/clock.js"></script>
     <script src="www/js/cursor.js"></script>
     <script src="www/js/preload.js"></script>
+    <script src="www/js/stop-menu.js"></script>
 </body>
 </html>

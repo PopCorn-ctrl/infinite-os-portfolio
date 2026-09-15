@@ -1,0 +1,54 @@
+
+.shutdown-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .8s ease;
+    z-index: 9999;
+}
+
+.shutdown-screen.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-text {
+    text-align: center;
+    font-family: "Quattrocento Sans", sans-serif;
+    color: white;
+}
+
+.line {
+    margin: 8px 0;
+}
+
+.line span {
+    display: inline-block;
+    margin: 0 4px;
+    font-size: 42px;
+}
+
+.off span {
+    font-size: 22px;
+    color: rgba(255,255,255,.65);
+}
+
+/* Animation flou décalée */
+.line span:nth-child(1){animation: blur-text 1.5s 0s infinite alternate;}
+.line span:nth-child(2){animation: blur-text 1.5s .15s infinite alternate;}
+.line span:nth-child(3){animation: blur-text 1.5s .30s infinite alternate;}
+.line span:nth-child(4){animation: blur-text 1.5s .45s infinite alternate;}
+.line span:nth-child(5){animation: blur-text 1.5s .60s infinite alternate;}
+.line span:nth-child(6){animation: blur-text 1.5s .75s infinite alternate;}
+.line span:nth-child(7){animation: blur-text 1.5s .90s infinite alternate;}
+.line span:nth-child(8){animation: blur-text 1.5s 1.05s infinite alternate;}
+
+@keyframes blur-text {
+    from { filter: blur(0); opacity: 1; }
+    to   { filter: blur(4px); opacity: .6; }
+}

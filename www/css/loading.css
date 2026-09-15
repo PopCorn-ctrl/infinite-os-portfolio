@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
 
-/* ---------------- PRELOADER ---------------- */
-
 .loading{
     position: fixed;
     inset: 0;
@@ -9,7 +7,6 @@
     overflow: hidden;
 }
 
-/* Grande plaque noire */
 .loading::before{
     content: "";
     position: absolute;
@@ -25,7 +22,6 @@
     z-index: -1;
 }
 
-/* Texte LOADING */
 
 .loading-text{
     position: absolute;
@@ -61,9 +57,7 @@
 @keyframes blur-text{
     from{filter: blur(0);}
     to{filter: blur(4px);}
-}
-
-/* ---------------- CONTENU ---------------- */
+} 
 
 #startup{
     opacity: 0;
@@ -75,10 +69,8 @@
         filter .8s ease;
 }
 
-/* ---------------- SORTIE ---------------- */
-
 .loading.hide::before{
-    animation: diagonalSwipe 8s cubic-bezier(.77,0,.18,1) forwards;
+    animation: diagonalSwipe 1s cubic-bezier(.77,0,.18,1) forwards;
 }
 
 @keyframes diagonalSwipe{
@@ -87,5 +79,23 @@
     }
     to{
         transform: translate(-140%, -140%) rotate(-45deg);
+    }
+}
+
+
+.loading.hide .loading-text{
+    animation: textOut 1s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+@keyframes textOut{
+    from{
+        opacity: 1;
+        transform: translate(0,0);
+        filter: blur(0);
+    }
+    to{
+        opacity: 0;
+        transform: translate(-180px, -180px);
+        filter: blur(8px);
     }
 }

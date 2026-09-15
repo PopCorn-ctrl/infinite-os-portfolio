@@ -1,29 +1,25 @@
-const TEST = document.querySelector('.cursor');
-const startup = document.getElementById('startup');
+const startup = document.getElementById("startup");
 
-window.addEventListener('load', () => {
-
-    const loadingScreen = document.querySelector('.loading');
+window.addEventListener("load", () => {
+    const loadingScreen = document.querySelector(".loading");
+    const startup = document.getElementById("startup");
 
     setTimeout(() => {
+        loadingScreen.classList.add("hide");
 
-        // Lance le swipe diagonal
-        loadingScreen.classList.add('hide');
+        startup.style.opacity = "1";
+        startup.style.transform = "scale(1)";
+        startup.style.filter = "blur(0)";
 
-        // Révèle la page
-        startup.style.opacity = '1';
-        startup.style.transform = 'scale(1)';
-        startup.style.filter = 'blur(0)';
+        setTimeout(() => {
+            document.querySelectorAll(".reveal").forEach((el, i) => {
+                setTimeout(() => el.classList.add("show"), i * 200);
+            });
+        }, 600); 
 
-        // Supprime le preload après l'animation
         setTimeout(() => {
             loadingScreen.remove();
         }, 4000);
 
     }, 5000);
-
-});
-
-particlesJS.load('particles-js', 'www/js/particlesjs-config.json', function () {
-    console.log('Particles.js chargé');
 });

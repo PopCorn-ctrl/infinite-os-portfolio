@@ -15,10 +15,25 @@ document.addEventListener('click', e => {
 const customMenu = document.getElementById("customMenu");
 document.addEventListener("contextmenu", (event) => {
   event.preventDefault();
-  //Set positiom of the custom menu to where user clicked
-  customMenu.style.top = `${event.pageY}px`;
-  customMenu.style.left = `${event.pageX}px`;
+  
   customMenu.style.display = "block";
+
+  let x = event.pageX;
+  let y = event.pageY;
+
+  const menuWidth = customMenu.offsetWidth;
+  const menuHeight = customMenu.offsetHeight
+
+  if (x + menuWidth > window.innerWidth) {
+    x = window.innerWidth - menuWidth;
+  }
+
+  if (y + menuHeight > window.innerHeight) {
+    y = window.innerHeight - menuHeight;
+  }
+
+  customMenu.style.top = `${y}px`;
+  customMenu.style.left = `${x}px`;
 });
 document.addEventListener("click", () => {
   customMenu.style.display = "none";
