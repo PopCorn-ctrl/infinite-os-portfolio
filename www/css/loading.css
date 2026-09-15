@@ -1,88 +1,91 @@
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+@import url('https://fonts.googleapis.com/css?family=Quattrocento+Sans');
+
+/* ---------------- PRELOADER ---------------- */
+
+.loading{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    overflow: hidden;
 }
 
-.loading-text {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
-  width: 100%;
-  height: 100px;
-  line-height: 100px;
-}
-.loading-text span {
-  display: inline-block;
-  margin: 0 5px;
-  color: #fff;
-  font-family: "Quattrocento Sans", sans-serif;
-}
-.loading-text span:nth-child(1) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 0s infinite linear alternate;
-}
-.loading-text span:nth-child(2) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 0.2s infinite linear alternate;
-}
-.loading-text span:nth-child(3) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 0.4s infinite linear alternate;
-}
-.loading-text span:nth-child(4) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 0.6s infinite linear alternate;
-}
-.loading-text span:nth-child(5) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 0.8s infinite linear alternate;
-}
-.loading-text span:nth-child(6) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 1s infinite linear alternate;
-}
-.loading-text span:nth-child(7) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 1.2s infinite linear alternate;
-}
-.loading-text span:nth-child(8) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 1.4s infinite linear alternate;
-}
-.loading-text span:nth-child(9) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 1.6s infinite linear alternate;
-}
-.loading-text span:nth-child(10) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 1.8s infinite linear alternate;
-}
-.loading-text span:nth-child(11) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 2.0s infinite linear alternate;
-}
-.loading-text span:nth-child(12) {
-  filter: blur(0px);
-  animation: blur-text 1.5s 2.2s infinite linear alternate;
+/* Grande plaque noire */
+.loading::before{
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 250vmax;
+    height: 250vmax;
+    left: 50%;
+    top: 50%;
+    background: #000;
+
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transform-origin: center;
+    z-index: -1;
 }
 
-@keyframes blur-text {
-  0% {
-    filter: blur(0px);
-  }
-  100% {
-    filter: blur(4px);
-  }
+/* Texte LOADING */
+
+.loading-text{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    z-index: 1;
+}
+
+.loading-text span{
+    display: inline-block;
+    margin: 0 5px;
+    color: #fff;
+    font-family: "Quattrocento Sans", sans-serif;
+}
+
+.loading-text span:nth-child(1){animation: blur-text 1.5s 0s infinite linear alternate;}
+.loading-text span:nth-child(2){animation: blur-text 1.5s .2s infinite linear alternate;}
+.loading-text span:nth-child(3){animation: blur-text 1.5s .4s infinite linear alternate;}
+.loading-text span:nth-child(4){animation: blur-text 1.5s .6s infinite linear alternate;}
+.loading-text span:nth-child(5){animation: blur-text 1.5s .8s infinite linear alternate;}
+.loading-text span:nth-child(6){animation: blur-text 1.5s 1s infinite linear alternate;}
+.loading-text span:nth-child(7){animation: blur-text 1.5s 1.2s infinite linear alternate;}
+.loading-text span:nth-child(8){animation: blur-text 1.5s 1.4s infinite linear alternate;}
+.loading-text span:nth-child(9){animation: blur-text 1.5s 1.6s infinite linear alternate;}
+.loading-text span:nth-child(10){animation: blur-text 1.5s 1.8s infinite linear alternate;}
+.loading-text span:nth-child(11){animation: blur-text 1.5s 2s infinite linear alternate;}
+.loading-text span:nth-child(12){animation: blur-text 1.5s 2.2s infinite linear alternate;}
+
+@keyframes blur-text{
+    from{filter: blur(0);}
+    to{filter: blur(4px);}
+}
+
+/* ---------------- CONTENU ---------------- */
+
+#startup{
+    opacity: 0;
+    transform: scale(.97);
+    filter: blur(8px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,1,.36,1),
+        filter .8s ease;
+}
+
+/* ---------------- SORTIE ---------------- */
+
+.loading.hide::before{
+    animation: diagonalSwipe 8s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+@keyframes diagonalSwipe{
+    from{
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    to{
+        transform: translate(-140%, -140%) rotate(-45deg);
+    }
 }

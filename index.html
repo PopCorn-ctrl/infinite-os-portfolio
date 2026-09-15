@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="www/img/logo.png">
     <title>Portfolio OS</title>
 
     <link rel="stylesheet" href="www/css/styles.css">
@@ -29,20 +31,35 @@
         </div>
     </div>
 
+    
+    
+
     <div class="cursor"></div>
+    <div class="custom-menu" id="customMenu">
+        <ul>
+            <li><span>Afficher</span><span class="arrow">›</span></li>
+            <li><span>Nouveau</span><span class="arrow">›</span></li>
+            <li><span>Personnalisé</span></li>
+            <li><span>Terminal</span></li>
+
+            <li class="separator"></li>
+
+            <li><span>Paramètres</span><span class="arrow">›</span></li>
+        </ul>
+    </div>
 
     <section id="startup">
+
+        <div class="foreground"></div>
         <div id="particles-js"></div>
 
-        <div class="clock">
-            <span id="hours">00</span> :
-            <span id="minutes">00</span>
-        </div>
-        
-        
+        <div id="clock"></div>
 
-        <div class="loginbutton"></div>
+        <div class="navbar">
+        
+        </div>
     </section>
+
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="www/js/clock.js"></script>

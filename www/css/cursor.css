@@ -7,9 +7,9 @@
     left: 50%;
     transform: translate(-50%);
     border-radius: 50%;
-    background: transparent;
+    background: #fff;
     pointer-events: none;
-    z-index: 111;
+    z-index: 100;
     border: 2px solid #fff;
     transition: all 0.2s ease-out;
     animation: moveCursor1 .6s infinite alternate;
