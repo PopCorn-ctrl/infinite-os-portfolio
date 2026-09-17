@@ -23,11 +23,6 @@ quit.addEventListener("click", () => {
     document.getElementById("shutdownScreen").classList.add("show");
 
     setTimeout(() => {
-        window.close();
-    }, 2000);
+        window.location.href = "https://www.google.com";
+    }, 4000);
 });
-
-refresh.addEventListener("click", () => {
-    window.location.reload();
-    console.log("test")
-})

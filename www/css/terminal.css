@@ -1,0 +1,168 @@
+@keyframes slideUpAnimation {
+  0% { transform: translateY(100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDownAnimation {
+    from {transform: translateY(0); opacity: 1;}
+    to {transform: translateY(100px); opacity: 0;}
+}
+
+.terminal {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    width: 30%;
+    height: 40rem;
+    z-index: 5;
+
+    top: 30%;
+	left: 50%;  
+    border-radius: 15px;
+    
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+
+    animation-name: slideUpAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+} 
+
+.terminal.closing {
+    display: block;
+    visibility: visible;
+    animation: slideDownAnimation 0.5s ease-in-out forwards;
+}
+
+.terminal.show {
+    display: block;
+    visibility: visible;
+    animation-name: slideUpAnimation;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+}
+
+.topbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.terminal-title {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.terminal-button {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #ff5f56;
+    pointer-events: auto;
+}
+
+.terminal-button.minimize {
+    background-color: #ffbd2e;
+}
+.terminal-button.maximize {
+    background-color: #27c93f;
+}
+
+#terminal-content {
+    height: calc(100% - 50px);
+    padding: 1rem;
+    box-sizing: border-box;
+
+    font-family: "Courier New", monospace;
+    font-size: 25px;
+
+    color: white;
+    overflow-y: auto;
+
+    cursor: text;
+}
+
+#terminal-output {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+#terminal-input-line {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.terminal-prompt {
+    flex-shrink: 0;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+#terminal-input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 20px;
+
+    caret-color: white;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+@keyframes blinkCursor {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.terminal-line {
+    margin-bottom: 4px;
+}
+
+.terminal-command {
+    color: #fff;
+}
+
+.terminal-error {
+    color: #ff5f56;
+}
+
+.terminal-success {
+    color: #27c93f;
+}
+
+.terminal-info {
+    color: #aaa;
+}

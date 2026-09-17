@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="www/css/right-click.css">
         <link rel="stylesheet" href="www/css/dock.css">
         <link rel="stylesheet" href="www/css/close.css">
+        <link rel="stylesheet" href="www/css/terminal.css">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
     </head>
@@ -84,8 +85,14 @@
 
         <section id="startup" class="reveal">
 
-            <div class="foreground"></div>
-            <div id="particles-js"></div>
+            <div class="foreground">
+                <div class="fgjour"></div>
+                <div class="fgnuit active"></div>
+            </div>
+            <div id="particles-js">
+                <div class="bgjour"></div>
+                <div class="bgnuit active"></div>
+            </div>
 
             <div class="nav reveal">
                 <div class="left reveal"><img src="www/img/logo.png" alt="" id="logo"></div>
@@ -99,13 +106,13 @@
                             <span class="right-icon"><i class="fa-solid fa-wifi"></i></span>
                             <span class="right-icon"><i class="fa-brands fa-bluetooth-b"></i></span>
                             <span class="right-icon"><i class="fa-solid fa-volume-high"></i></span>
-                            <span class="right-icon"><i class="fa-solid fa-moon enable"></i></span>
-                            <span class="right-icon disable"><i class="fa-solid fa-sun disable"></i></span>
+                            <span class="right-icon" id="theme-moon"><i class="fa-solid fa-moon enable"></i></span>
+                            <span class="right-icon disable" id="theme-sun"><i class="fa-solid fa-sun disable"></i></span>
 
                         </div>
                     </div>
                 </div>
-                <div id="clock"></div>
+                <div id="clock"></div> 
             </div>
 
             <div class="stop-menu">
@@ -152,6 +159,8 @@
                         <i class="fa-solid fa-grip"></i>
                     </a>
 
+                    <span class="dock-separator"></span>
+
                     <a href="#" class="dock-item" id="chrome">
                         <i class="fa-brands fa-chrome"></i>
                     </a>
@@ -172,7 +181,7 @@
                         <i class="fa-brands fa-spotify"></i>
                     </a>
 
-                    <a href="#" class="dock-item" id="terminal">
+                    <a href="#" class="dock-item" id="terminalIcon">
                         <i class="fa-solid fa-terminal"></i>
                     </a>
 
@@ -184,6 +193,32 @@
 
                 </div>
             </div>
+
+            <div class="terminal" id="terminal">
+                <div class="topbar" id="terminal-topbar">
+                    <span class="terminal-title">1. user@void: ~ (neonShell)</span>
+                    <div class="terminal-buttons">
+                        <span class="terminal-button close" id="closeTerminal"></span>
+                        <span class="terminal-button minimize" id="minimizeTerminal"></span>
+                        <span class="terminal-button maximize" id="maximizeTerminal"></span>
+                    </div>
+                </div>
+                <div id="terminal-content">
+                    <div id="terminal-output"></div>
+                        <div id="terminal-input-line">
+                            <span class="terminal-prompt">void &gt;</span>
+                            <input
+                                id="terminal-input"
+                                type="text"
+                                autocomplete="off"
+                                spellcheck="false"
+                                contenteditable="false"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
 
@@ -203,5 +238,7 @@
         <script src="www/js/stop-menu.js"></script>
         <script src="www/js/start.js"></script>
         <script src="www/js/dock-app.js"></script>
+        <script src="www/js/theme.js"></script>
+        <script src="www/js/terminal.js"></script>
     </body>
 </html>

@@ -16,6 +16,7 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    background: #000;
 }
 
 .shutdown {
@@ -37,35 +38,91 @@ body {
     z-index: 1;
 }
 
-
-.foreground {
+.bgjour,
+.fgjour,
+.bgnuit,
+.fgnuit {
     position: absolute;
     width: 100%;
     height: 100vh;
-    z-index: 1;
+
+    background-size: cover;
+
     pointer-events: none;
-    background: url(../img/foreground.png);
-    background-size: cover;
     overflow: hidden;
+
+    transform-origin: 50% 200vh;
+
+    transform: rotate(-60deg);
+
+    opacity: 1;
+    visibility: hidden;
+
+    transition:
+        transform 1.5s cubic-bezier(.65, 0, .35, 1),
+        visibility 1.5s cubic-bezier(.65, 0, .35, 1)
 }
 
-#particles-js {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+.bgjour.active,
+.fgjour.active,
+.bgnuit.active,
+.fgnuit.active {
+    transform: rotate(0deg);
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        transform 1.5s cubic-bezier(.65, 0, .35, 1),
+        visibility 1.5s cubic-bezier(.65, 0, .35, 1)
+}
+
+.bgjour.leaving,
+.fgjour.leaving,
+.bgnuit.leaving,
+.fgnuit.leaving {
+    transform: rotate(180deg);
+/* 
+    opacity: 0; */
+    visibility: hidden;
+
+
+    transition:
+        transform 1.5s cubic-bezier(.65, 0, .35, 1),
+        visibility 1.5s cubic-bezier(.65, 0, .35, 1)
+}
+
+.bgjour.reset,
+.fgjour.reset,
+.bgnuit.reset,
+.fgnuit.reset {
+    transform: rotate(-180deg);
+    opacity: 1;
+    visibility: hidden;
+    transition: none !important;
+}
+
+
+.bgjour {
     z-index: -1;
-    background: url(../img/bg.jpg);
+    background: url("../img/bgjour.png");
     background-size: cover;
 }
 
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+.fgjour {
+    z-index: 1;
+    background: url("../img/fgjour.png");
+    background-size: cover;
 }
 
-.reveal.show {
-    opacity: 1;
-    transform: translateY(0);
+.bgnuit {
+    z-index: -1;
+    background: url("../img/bgnuit.jpg");
+    background-size: cover;
+}
+
+.fgnuit {
+    z-index: 1;
+    background: url("../img/fgnuit.png");
+    background-size: cover;
 }

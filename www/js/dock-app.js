@@ -4,7 +4,7 @@ const messages = document.getElementById("messages");
 const mail = document.getElementById("mail");
 const photos = document.getElementById("photos");
 const music = document.getElementById("music");
-const terminal = document.getElementById("terminal");
+const terminal = document.getElementById("terminalIcon");
 const trash = document.getElementById("trash");
 
 applist.addEventListener("click", function(event) {
