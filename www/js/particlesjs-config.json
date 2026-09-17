@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 160,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
@@ -30,14 +30,14 @@
       "random": true,
       "anim": {
         "enable": true,
-        "speed": 1,
+        "speed": 0.3,
         "opacity_min": 0,
         "sync": false
       }
     },
     "size": {
-      "value": 3,
-      "random": true,
+      "value": 1,
+      "random": false,
       "anim": {
         "enable": false,
         "speed": 4,
@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 1,
+      "speed": 0.3,
       "direction": "none",
       "random": true,
       "straight": false,

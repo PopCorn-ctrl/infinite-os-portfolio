@@ -1,7 +1,7 @@
 .dock {
     position: absolute;
-    width: 65%;
-    height: 4.68rem;
+    width: calc(auto + 20px);
+    height: 3.68rem;
     z-index: 4;
 
     top: 90%;
@@ -23,4 +23,47 @@
 
 .dock.reveal.show {
     transform: translate(-50%, -50%);
+}
+
+.dock-apps {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.dock-item {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.18s cubic-bezier(.2,.8,.2,1),
+        margin 0.18s ease;
+}
+
+.dock-item span {
+    font-size: 38px;
+
+    transition:
+        transform 0.18s cubic-bezier(.2,.8,.2,1),
+        filter 0.18s ease;
+}
+
+.dock-item:hover {
+    transform: translateY(-12px) scale(1.25);
+}
+
+.dock-separator {
+    width: 1px;
+    height: 42px;
+    margin: 0 7px;
+    background: rgba(255, 255, 255, 0.3);
 }
