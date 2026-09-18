@@ -124,33 +124,44 @@
 }
 
 .stop-menu {
-    opacity: 0;
     position: absolute;
-    height: auto;
-    width: 250px;
-    margin-top: 50px;
-    margin-left: 15px;
+    top: 60px;
+    left: 15px;
 
-    background: rgba(255,255,255,.05);
-    box-shadow: 0 4px 30px rgba(0,0,0,.1);
+    width: 250px;
+    height: auto;
+
+    margin: 0;
+
+    background: rgba(255, 255, 255, .05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255,255,255,.3);
+
+    border: 1px solid rgba(255, 255, 255, .3);
     border-radius: 20px;
 
     color: white;
-    z-index: 10;
+    z-index: 100;
     overflow: hidden;
 
-    transition: opacity .5s ease, transform .2s ease;
-    transform: translateX(-50rem);
+    /* État fermé */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease,
+        visibility .3s ease;
 }
 
-.active {
+.stop-menu.active {
+    /* État ouvert */
     opacity: 1;
-    transform: translateX(0);
-    transition: opacity .5s ease, transform .2s ease;
-} 
+    visibility: visible;
+    transform: translateY(0);
+}
 
 .stop-menu ul {
     list-style: none;

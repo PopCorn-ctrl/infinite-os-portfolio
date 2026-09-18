@@ -131,6 +131,7 @@ closeButton.addEventListener("click", () => {
 minimizeButton.addEventListener("click", () => {
     closeTerminal();
     isMinimized = true;
+    terminalIcon.style.transform = "translateY(0) scale(1)";
 });
 
 maximizeButton.addEventListener("click", () => {
